@@ -19,6 +19,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREAR_TABLA);
+        //se puede hacer tambien con:  db.execSQL(Utilidades.CREAR_TABLA_PAIS);
     }
 
     @Override

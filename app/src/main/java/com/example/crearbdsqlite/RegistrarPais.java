@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.crearbdsqlite.utilidades.Utilidades;
+
 public class RegistrarPais extends AppCompatActivity {
 
     EditText etNombrePais, etPoblacion, etPib;
@@ -32,21 +34,37 @@ public class RegistrarPais extends AppCompatActivity {
         switch (v.getId()){
 
             case R.id.btnAnadir:
-                anadirPais();
+                //anadirPais();
+                anadirPaisSQL();
                 break;
 
 
         }
     }
 
-
-    private void anadirPais(){
-        ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(this,"bd_Paises",null,1);
+    private void anadirPaisSQL(){
+        ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(this,"bd_Paises",null,1);//conseguimos la base de datos y la abrimos para escribir
         //indicamos que vamos a abrir la base de datos para escribir...
         SQLiteDatabase db = conexion.getWritableDatabase();
-        //Para poder escribir se hace pareido a como utilizamos una tabla hash, es decir, clave dato.
+        String insertar="INSERT INTO "+Utilidades.TABLA_PAIS + " ( " + Utilidades.CAMPO_NOMBRE_PAIS +", "+Utilidades.CAMPO_POBLACION +", " + Utilidades.CAMPO_PIB+")" + " VALUES ('"+
+                this.etNombrePais.getText().toString() +"', " + this.etPoblacion.getText().toString() +", "+this.etPib.getText().toString()+");";
+
+        db.execSQL(insertar);
+        db.close();
+
+        limpiarCampos();
+
+    }
+
+
+
+    private void anadirPais(){
+        ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(this,"bd_Paises",null,1);//conseguimos la base de datos y la abrimos para escribir
+        //indicamos que vamos a abrir la base de datos para escribir...
+        SQLiteDatabase db = conexion.getWritableDatabase();
+        //Para poder escribir se hace pareido a como utilizamos una tabla hash, es decir, clave(nombre igual que la columana de la tabla) dato.
         ContentValues valores= new ContentValues();
-        valores.put("NombrePais",this.etNombrePais.getText().toString());
+        valores.put(Utilidades.CAMPO_NOMBRE_PAIS,this.etNombrePais.getText().toString());//Se puede utilizar UTILIDADES.... O EL NOMBRE DE LA COLUMNA
         valores.put("Poblacion",Integer.parseInt(this.etPoblacion.getText().toString()));
         valores.put("PIB",Integer.parseInt(this.etPib.getText().toString()));
 

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrearBDSQLite">
         <activity
+            android:name=".BuscarPais"
+            android:exported="false" />
+        <activity
             android:name=".RegistrarPais"
             android:exported="false" />
         <activity
