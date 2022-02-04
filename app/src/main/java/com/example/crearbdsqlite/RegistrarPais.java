@@ -43,7 +43,7 @@ public class RegistrarPais extends AppCompatActivity {
     }
 
     private void anadirPaisSQL(){
-        ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(this,"bd_Paises",null,1);//conseguimos la base de datos y la abrimos para escribir
+        ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(this,"bd_Paises",null,2);//conseguimos la base de datos y la abrimos para escribir
         //indicamos que vamos a abrir la base de datos para escribir...
         SQLiteDatabase db = conexion.getWritableDatabase();
         String insertar="INSERT INTO "+Utilidades.TABLA_PAIS + " ( " + Utilidades.CAMPO_NOMBRE_PAIS +", "+Utilidades.CAMPO_POBLACION +", " + Utilidades.CAMPO_PIB+")" + " VALUES ('"+
@@ -59,7 +59,7 @@ public class RegistrarPais extends AppCompatActivity {
 
 
     private void anadirPais(){
-        ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(this,"bd_Paises",null,1);//conseguimos la base de datos y la abrimos para escribir
+        ConexionSQLiteHelper conexion= new ConexionSQLiteHelper(this,"bd_Paises",null,2);//conseguimos la base de datos y la abrimos para escribir
         //indicamos que vamos a abrir la base de datos para escribir...
         SQLiteDatabase db = conexion.getWritableDatabase();
         //Para poder escribir se hace pareido a como utilizamos una tabla hash, es decir, clave(nombre igual que la columana de la tabla) dato.

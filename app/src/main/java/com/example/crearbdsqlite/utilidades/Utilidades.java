@@ -1,6 +1,10 @@
 package com.example.crearbdsqlite.utilidades;
 
-public class Utilidades {
+import android.provider.BaseColumns;
+
+public class Utilidades implements BaseColumns{
+
+    public static final String ID = BaseColumns._ID;
 
     public static final String TABLA_PAIS="Pais";
     public static final String CAMPO_NOMBRE_PAIS="nombrePais";
@@ -9,8 +13,8 @@ public class Utilidades {
 
 
     public static final String CREAR_TABLA_PAIS="CREATE TABLE "
-            + TABLA_PAIS + " ("+ CAMPO_NOMBRE_PAIS+" TEXT, "
-            + CAMPO_POBLACION +" INTEGER, " + CAMPO_PIB +" INTEGER);";
-
-
+            + TABLA_PAIS + " ("+ ID + " Integer primary key AUTOINCREMENT, "
+            +CAMPO_NOMBRE_PAIS+" TEXT, "
+            + CAMPO_POBLACION +" INTEGER, "
+            + CAMPO_PIB +" INTEGER);";
 }
