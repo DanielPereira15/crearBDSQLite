@@ -1,10 +1,16 @@
 package com.example.crearbdsqlite.entidades;
 
+import java.security.PublicKey;
+
 public class Pais {
 
    private String nombrePais;
     private int poblacion;
     private int PIB;
+
+    public Pais(){
+
+    }
 
     public Pais(String nombrePais, int poblacion, int PIB) {
         this.nombrePais = nombrePais;

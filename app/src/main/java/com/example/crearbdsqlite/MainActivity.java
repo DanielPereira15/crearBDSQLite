@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnBuscar:
                 intent= new Intent(this,BuscarPais.class);
                 break;
+
+            case R.id.btnMostrar:
+                intent = new Intent(this,MostrarListView.class);
+                break;
         }
 
         startActivity(intent);

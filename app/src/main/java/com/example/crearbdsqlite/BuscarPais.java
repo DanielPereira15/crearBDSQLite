@@ -145,7 +145,8 @@ public class BuscarPais extends AppCompatActivity {
                    null,null,null);   //cursor es un puntero que apunta a lo que devuelve select
 
             cursor.moveToFirst();
-            etPoblacionBuscar.setText(""+cursor.getInt(0));
+           Toast.makeText(getApplicationContext(),"elementos encontrados: " + cursor.getCount(),Toast.LENGTH_LONG).show();
+           etPoblacionBuscar.setText(""+cursor.getInt(0));
             etPibBuscar.setText(""+cursor.getInt(1));
 
             cursor.close();

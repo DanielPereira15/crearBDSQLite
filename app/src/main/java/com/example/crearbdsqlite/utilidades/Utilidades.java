@@ -1,10 +1,10 @@
 package com.example.crearbdsqlite.utilidades;
 
 import android.provider.BaseColumns;
+//hay que hacer insert y buscar tambien
+public class Utilidades implements BaseColumns{ // en el examen hay que usar esto el implements
 
-public class Utilidades implements BaseColumns{
-
-    public static final String ID = BaseColumns._ID;
+    public static final String ID = BaseColumns._ID; // en el examen hay que usar esto
 
     public static final String TABLA_PAIS="Pais";
     public static final String CAMPO_NOMBRE_PAIS="nombrePais";

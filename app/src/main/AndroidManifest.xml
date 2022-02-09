@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrearBDSQLite">
         <activity
+            android:name=".MostrarListView"
+            android:exported="false" />
+        <activity
             android:name=".BuscarPais"
             android:exported="false" />
         <activity
